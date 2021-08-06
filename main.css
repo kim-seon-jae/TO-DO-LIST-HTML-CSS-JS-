@@ -33,12 +33,32 @@ header div div {
   height: 50px;
   font-size: 30px;
 }
-
+.input_btn {
+  background-color: rgb(48, 133, 48);
+}
+.input_btn_remove {
+  background-color: rgb(255, 98, 98);
+}
+.input_btn_select_remove {
+  background-color: rgb(255, 98, 98);
+}
 .output {
- display: flex;
- justify-content: center;
+ position: relative;
+ margin-left: 400px;
+ 
+}
+
+.output div {
+  width: 550px;
+  border-bottom: 1px solid #000;
+  margin-top: 20px;
 }
 .output_ul .data {
-  margin-right: 350px;
-  margin-bottom: 20px;
+  
+
+  display: inline-block;
 }
+
+/* .output_ul .checkbox {
+  margin-left: 10px;
+} */
