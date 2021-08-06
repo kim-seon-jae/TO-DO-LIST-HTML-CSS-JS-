@@ -24,6 +24,7 @@ inputBtnEl.addEventListener('click',function () {
   let div = document.createElement('div') // div 태그 생성
   let outputDataEl = document.createElement('li'); // li 태그 생성
   let selectDataEl = document.createElement('input') // input 태그 생성
+  let writingTimeEl = document.createElement('span')
 
   div.id = inputTextEl.value // div 태그 클래스 값 지정
   
@@ -46,9 +47,14 @@ inputBtnEl.addEventListener('click',function () {
   outputDataEl.className='data' // li 태그 클래스 지정
 
   outputDataEl.textContent=arr[arr.length-1] // li 태그 값 넣기
-  
+  let date = new Date()
+  let currentTime = `${date.getHours()}시 ${date.getMinutes()}분 ${date.getSeconds()}초`
+  writingTimeEl.className = 'time'
+  writingTimeEl.textContent = currentTime
+
   div.appendChild(selectDataEl) // div 태그에 input 넣기
   div.appendChild(outputDataEl) // div 태그에 li 넣기
+  div.appendChild(writingTimeEl) // div 태그에 span 넣기
 
   outputUlEl.appendChild(div) // ul 태그에 div 넣기
 

@@ -54,9 +54,13 @@ header div div {
   margin-top: 20px;
 }
 .output_ul .data {
-  
-
   display: inline-block;
+}
+.output_ul .time {
+  position: absolute;
+  left: 450px;
+  font-size: 15px;
+  margin-top: 10px;
 }
 
 /* .output_ul .checkbox {
