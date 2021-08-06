@@ -1,0 +1,44 @@
+body {
+  background-color: #82D580;
+  font-size: 30px;
+}
+body div {
+  position: relative;
+}
+
+header div {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  font-size: 80px;
+  color: #EAEAEA;
+}
+
+header div div {
+  border: 3px solid rgb(172, 172, 172);
+  border-radius: 50px;
+  padding: 10px;
+  padding-bottom: 5px;
+  width: 500px;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.input_text {
+  width: 400px;
+  height: 50px;
+  font-size: 30px;
+}
+
+.output {
+ display: flex;
+ justify-content: center;
+}
+.output_ul .data {
+  margin-right: 350px;
+  margin-bottom: 20px;
+}
