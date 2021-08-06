@@ -14,14 +14,13 @@ let arr = [];
 // checkbox로 선택한거 담아두는 배열
 let selectArr = [];
 
-let count = 0
+
 // todolist 작성하기
 inputBtnEl.addEventListener('click',function () {
   if(arr.length >= 0 && arr.includes(inputTextEl.value) === false) {
     // 같은 내용 걸러내기
     arr.push(inputTextEl.value)
   
-  for(let i = count; i<arr.length; i++) {
   let div = document.createElement('div') // div 태그 생성
   let outputDataEl = document.createElement('li'); // li 태그 생성
   let selectDataEl = document.createElement('input') // input 태그 생성
@@ -54,26 +53,23 @@ inputBtnEl.addEventListener('click',function () {
   outputUlEl.appendChild(div) // ul 태그에 div 넣기
 
   console.log("arr : ",arr)
-  }
-  count++
+  
+  
   }
   else {
     alert("동일한 내용이 있습니다.")
   }
 })
 
-
-
-
-
-
-
 // 작성한 내용 전체 삭제하기
 inputBtnRemoveEl.addEventListener('click',function () {
-  arr=[];
+  arr=[]
+  selectArr=[];
   while (outputUlEl.firstChild) {
     outputUlEl.removeChild(outputUlEl.firstChild)
   }
+  console.log("selectArr : ",selectArr)
+  console.log("arr : ",arr)
 })
 
 // 작성한 내용 선택 삭제하기
@@ -87,7 +83,7 @@ inputBtnSelectRemoveEl.addEventListener('click',function () {
         arr.splice(k1,1)
         selectArr.splice(k2,1)
         a.remove()
-        count--
+
         console.log("selectArr : ",selectArr)
         console.log("arr : ",arr)
       }
