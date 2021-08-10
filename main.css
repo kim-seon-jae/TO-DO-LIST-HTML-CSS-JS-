@@ -25,7 +25,22 @@ header div div {
 .input {
   display: flex;
   justify-content: center;
+  text-align: center;
   margin-top: 30px;
+}
+
+select {
+  text-align-last: center;
+  justify-content: center;
+}
+.input #hour,
+.input #minite,
+.input #second {
+  width: 110px;
+  height: 30px;
+  /* display: flex;
+  text-align: center;
+  justify-content: center; */
 }
 
 .input_text {
@@ -58,9 +73,9 @@ header div div {
 }
 .output_ul .time {
   position: absolute;
-  left: 450px;
+  left: 390px;
   font-size: 15px;
-  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /* .output_ul .checkbox {
