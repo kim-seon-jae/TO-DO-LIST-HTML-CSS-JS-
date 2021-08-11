@@ -76,12 +76,13 @@ inputBtnEl.addEventListener('click',function () {
 
   // console.log("outputDataEl : ", outputDataEl.textContent)
 
-  // let time_alarm = `알람 시간 : ${alarmTimeHour.value}시 ${alarmTimeMinite.value}분 ${alarmTimeSecond.value}초 `
-  // let currentTime = `입력 시간 : ${date.getHours()}시 ${date.getMinutes()}분 ${date.getSeconds()}초`
+  let time_alarm = `알람 시간 : ${alarmTimeHour.value}시 ${alarmTimeMinite.value}분 ${alarmTimeSecond.value}초 `
+  let currentTime = `입력 시간 : ${new Date().getHours()}시 ${new Date().getMinutes()}분 ${new Date().getSeconds()}초`
   // let time = currentTime + "\n" + time_alarm
-  // writingTimeEl.className = 'time'
-  // writingTimeEl.textContent = time
-  // console.log(currentTime + "\n" + time_alarm)
+  let time = time_alarm
+  writingTimeEl.className = 'time'
+  writingTimeEl.textContent = time
+  console.log(currentTime + "\n" + time_alarm)
   div.appendChild(selectDataEl) // div 태그에 input 넣기
   div.appendChild(outputDataEl) // div 태그에 li 넣기
   div.appendChild(writingTimeEl) // div 태그에 span 넣기

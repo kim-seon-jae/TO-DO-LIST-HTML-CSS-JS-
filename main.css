@@ -73,7 +73,7 @@ select {
 }
 .output_ul .time {
   position: absolute;
-  left: 390px;
+  left: 380px;
   font-size: 15px;
   margin-bottom: 10px;
 }
