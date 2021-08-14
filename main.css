@@ -108,17 +108,7 @@ section {
 } */
 
 
-/* select {
-  text-align-last: center;
-  justify-content: center;
-}
-.input #hour,
-.input #minite,
-.input #second {
-  width: 110px;
-  height: 30px;
-  
-} */
+
 /* .right {
   width: 50%;
   
@@ -142,20 +132,17 @@ section {
   border-bottom: none;
 }
 
-.hour0 {
-  background-color: green;
-}
-
 /* 모달창 */
 .modal_wrap {
   display: none;
   width: 500px;
-  height: 300px;
+  height: 200px;
   position: absolute;
   top: 45%;
   left: 50%;
   transform: translate(-50%,-50%);
-  background: #eee;
+  background: rgb(186, 235, 130);
+  border-radius:  20px 20px 20px 20px;
   z-index: 2;
 }
 
@@ -169,4 +156,54 @@ section {
   top: 0;
   left: 0;
   z-index: 1;
+}
+
+.modal_title {
+  position: absolute;
+  height: 60px;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 30px;
+  background-color: rgb(59, 189, 109);
+  width: 100%;
+  border-radius: 20px 20px 0 0 ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+
+}
+
+.modal_setting {
+  display: flex;
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+/* select {
+  text-align-last: center;
+  justify-content: center;
+} */
+#hour,
+#minite,
+#second {
+  width: 110px;
+  height: 40px;
+  margin: 10px;
+}
+
+#modal_btn, 
+#modal_close_btn {
+  position: absolute;
+  top: 145px;
+  width: 150px;
+  height: 30px;
+}
+#modal_btn {
+  left: 65px
+}
+#modal_close_btn {
+  right: 65px;
 }

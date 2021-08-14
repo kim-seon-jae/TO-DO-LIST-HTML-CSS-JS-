@@ -30,8 +30,13 @@ let helpindex = 0;
 
 // 추가버튼 누르면 모달창 열리기
 inputBtnEl.addEventListener('click',function(){
-  document.querySelector('.modal_wrap').style.display = 'block'
-  document.querySelector('.black_bg').style.display = 'block'
+  if(inputTextEl.value.length === 0){
+    alert('값을 입력해 주세요')
+    return
+  } else {
+    document.querySelector('.modal_wrap').style.display = 'block'
+    document.querySelector('.black_bg').style.display = 'block'
+  }
 })
 // 모달창 안 닫기버튼 누르면 닫히기
 modalBtnCloseEl.addEventListener('click', function() {
@@ -126,8 +131,10 @@ modalBtnEl.addEventListener('click',function () {
     if(alarmTime > 0) {
       setTimeout(function() {
         audio.play()
+      },alarmTime - 1000)
+      setTimeout(function() {
         alert(outputDataEl.textContent)
-      },alarmTime)
+      },alarmTime - 1000)
     } else {
       setTimeout(function() {
         audio.play()
@@ -137,11 +144,6 @@ modalBtnEl.addEventListener('click',function () {
     
   }
   
-
-  // setTimeout(()=>{
-  //   alert(outputDataEl.textContent)
-  // },alarmTime)
-
   console.log("hour : ", hour ,"minite : ", minite, "second : ", second, "sum : ", hour + minite + second)
 
   console.log(new Date().getHours(), new Date().getMinutes(), new Date().getSeconds())
@@ -151,11 +153,20 @@ modalBtnEl.addEventListener('click',function () {
 
   console.log("hour : ", alarmTimeHour.value, "minite : ", alarmTimeMinite.value, "second : ", alarmTimeSecond.value )
   
-
+  // 추가 완료후 모달창 닫기
   document.querySelector('.modal_wrap').style.display = 'none'
   document.querySelector('.black_bg').style.display = 'none'
+
+
+  // 캘린더에 알람시간 표시하기
+  if(alarmTimeHour !== 'none') {
+    let data = '.'+'hour'+alarmTimeHour.value
+    let calender = document.querySelector(data)
+    calender.textContent = inputTextEl.value
+    calender.style.backgroundColor = "#f9f5ad";
   }
-  else {
+  
+  } else {
     alert("동일한 내용이 있습니다.")
   }
 })
