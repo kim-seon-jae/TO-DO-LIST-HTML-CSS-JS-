@@ -1,35 +1,114 @@
 body {
-  background-color: #82D580;
-  font-size: 30px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  background-color: #FFFEE6;
 }
-body div {
+/* 타이틀 */
+.big_name {
+  position: relative;
+  width: 700px;
+  height: 70px;
+  margin: 0 auto;
+  border-radius: 50px;
+  background-color: #F4ED6E;
+}
+.big_name div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 40px;
+}
+
+/* 왼쪽ㅍ */
+section {
+  /* display: flex; */
   position: relative;
 }
-
-header div {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  font-size: 80px;
-  color: #EAEAEA;
-}
-
-header div div {
-  border: 3px solid rgb(172, 172, 172);
-  border-radius: 50px;
-  padding: 10px;
-  padding-bottom: 5px;
-  width: 500px;
+.left {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  box-sizing: border-box;
 }
 
 .input {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin-top: 30px;
+  left: 50px;
+  width: 100%;
+  height: 110px;
+  /* border-right: 3px solid green; */
+  box-sizing: border-box;
+  background-color: #f5f5c1;
 }
 
-select {
+.input_text {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  width: 400px;
+  height: 50px;
+  font-size: 30px;
+  box-sizing: border-box;
+}
+.input_btn {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 30px;
+  left: 450px;
+  background-color: rgb(115, 203, 115);
+}
+.input_btn_remove {
+  position: absolute;
+  width: 70px;
+  height: 50px;
+  top: 30px;
+  left: 500px;
+  background-color: rgb(255, 106, 106);
+}
+.input_btn_select_remove {
+  position: absolute;
+  width: 70px;
+  height: 50px;
+  top: 30px;
+  left: 570px;
+  background-color: rgb(255, 106, 106);
+}
+.output {
+  position: absolute;
+  top:110px;
+  left: 50px;
+  width: 590px;
+  /* border: 1px solid #000; */
+  font-size: 30px;
+  background-color: #f9f5ad;;
+
+}
+
+.output div {
+  margin-top: 10px;
+  border-bottom: 1px solid #000;
+  
+}
+.output_ul .data {
+  display: inline-block;
+  margin-left: 10px;
+}
+.output_ul .time {
+  position: absolute;
+  left: 400px;
+  font-size: 16px;
+  margin-top: 15px;
+} 
+
+/* .output_ul .checkbox {
+  margin-left: 10px;
+} */
+
+
+/* select {
   text-align-last: center;
   justify-content: center;
 }
@@ -38,46 +117,56 @@ select {
 .input #second {
   width: 110px;
   height: 30px;
-  /* display: flex;
-  text-align: center;
-  justify-content: center; */
-}
-
-.input_text {
-  width: 400px;
-  height: 50px;
-  font-size: 30px;
-}
-.input_btn {
-  background-color: rgb(48, 133, 48);
-}
-.input_btn_remove {
-  background-color: rgb(255, 98, 98);
-}
-.input_btn_select_remove {
-  background-color: rgb(255, 98, 98);
-}
-.output {
- position: relative;
- margin-left: 400px;
- 
-}
-
-.output div {
-  width: 550px;
-  border-bottom: 1px solid #000;
-  margin-top: 20px;
-}
-.output_ul .data {
-  display: inline-block;
-}
-.output_ul .time {
-  position: absolute;
-  left: 380px;
-  font-size: 15px;
-  margin-bottom: 10px;
-}
-
-/* .output_ul .checkbox {
-  margin-left: 10px;
+  
 } */
+/* .right {
+  width: 50%;
+  
+} */
+
+/* 캘린더 */
+.calender {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 600px;
+  border: 1px solid #000;
+}
+
+.calender div {
+  border-bottom: 1px solid #000;
+  height: 24px;
+}
+.calender div:last-child {
+  border-bottom: none;
+}
+
+.hour0 {
+  background-color: green;
+}
+
+/* 모달창 */
+.modal_wrap {
+  display: none;
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #eee;
+  z-index: 2;
+}
+
+.black_bg {
+  display: none;
+  position: absolute;
+  content:'';
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  top: 0;
+  left: 0;
+  z-index: 1;
+}

@@ -1,5 +1,7 @@
 let inputTextEl = document.querySelector('.input_text')
 let inputBtnEl = document.querySelector('.input_btn')
+let modalBtnEl = document.querySelector('#modal_btn')
+let modalBtnCloseEl = document.querySelector('#modal_close_btn')
 let inputBtnRemoveEl = document.querySelector('.input_btn_remove')
 let inputBtnSelectRemoveEl = document.querySelector('.input_btn_select_remove')
 let outputUlEl = document.querySelector('.output_ul')
@@ -17,7 +19,7 @@ let arr = [];
 // checkbox로 선택한거 담아두는 배열
 let selectArr = [];
 
-
+let helpindex = 0;
 
 // 알람 기능
 
@@ -26,12 +28,18 @@ let selectArr = [];
 
 
 
-
-
-
-
-// todolist 작성하기(추가버튼)
-inputBtnEl.addEventListener('click',function () {
+// 추가버튼 누르면 모달창 열리기
+inputBtnEl.addEventListener('click',function(){
+  document.querySelector('.modal_wrap').style.display = 'block'
+  document.querySelector('.black_bg').style.display = 'block'
+})
+// 모달창 안 닫기버튼 누르면 닫히기
+modalBtnCloseEl.addEventListener('click', function() {
+  document.querySelector('.modal_wrap').style.display = 'none'
+  document.querySelector('.black_bg').style.display = 'none'
+})
+// 모달창안 확인버튼(todolist 작성하기)
+modalBtnEl.addEventListener('click',function () {
   
   if(inputTextEl.value.length === 0){
     alert('값을 입력해 주세요')
@@ -74,7 +82,7 @@ inputBtnEl.addEventListener('click',function () {
 
   outputDataEl.textContent=arr[arr.length-1] // li 태그 값 넣기
 
-  // console.log("outputDataEl : ", outputDataEl.textContent)
+  console.log("outputDataEl : ", outputDataEl.textContent)
 
   let time_alarm = `알람 시간 : ${alarmTimeHour.value}시 ${alarmTimeMinite.value}분 ${alarmTimeSecond.value}초 `
   let currentTime = `입력 시간 : ${new Date().getHours()}시 ${new Date().getMinutes()}분 ${new Date().getSeconds()}초`
@@ -143,6 +151,9 @@ inputBtnEl.addEventListener('click',function () {
 
   console.log("hour : ", alarmTimeHour.value, "minite : ", alarmTimeMinite.value, "second : ", alarmTimeSecond.value )
   
+
+  document.querySelector('.modal_wrap').style.display = 'none'
+  document.querySelector('.black_bg').style.display = 'none'
   }
   else {
     alert("동일한 내용이 있습니다.")
@@ -163,19 +174,22 @@ inputBtnRemoveEl.addEventListener('click',function () {
 // 작성한 내용 선택 삭제하기
 inputBtnSelectRemoveEl.addEventListener('click',function () {
   if(selectArr.length>=1) {
-    for(let i = 0; i<selectArr.length-1; i++) {
-      if(arr.includes(selectArr[i])) {
-        let a = document.querySelector(`#${selectArr[i]}`)
-        let k1 = arr.indexOf(selectArr[i])
-        let k2 = selectArr.indexOf(selectArr[i])
+    let selectArrLength = selectArr.length
+    let newSelectArr = [...selectArr]
+    let newArr = [...arr]
+    
+    for(let i = 0; i<selectArrLength; i++) {
+      if(newArr.includes(newSelectArr[i])) {
+        let a = document.querySelector(`#${newSelectArr[i]}`)
+        a.remove()
+        let k1 = newArr.indexOf(newSelectArr[i]) + helpindex
+        let k2 = newSelectArr.indexOf(newSelectArr[i]) + helpindex
         arr.splice(k1,1)
         selectArr.splice(k2,1)
-        a.remove()
-
-        console.log("selectArr : ",selectArr)
-        console.log("arr : ",arr)
-      }
+        helpindex = helpindex - 1;
+      } 
     }
+    
   }
 })
 

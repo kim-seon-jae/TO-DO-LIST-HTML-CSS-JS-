@@ -6,82 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
   <link rel="stylesheet" href="./main.css">
   <script defer src="./main.js"></script>
 </head>
 
 <body>
-  <div class="todolist">
-    <header>
-      <div>
-        <div>
-          TO DO LIST
-        </div>
-      </div>
-    </header>
-    <section class="input">
-
+  <div class="black_bg"></div>
+  <div class="modal_wrap">
+    <div class="modal_title">알람 설정</div>
+    <div class="modal_setting">
       <!-- 드롭다운 알람시간 설정 -->
-      <!-- <span>
-        알람 시간 설정
-      </span> -->
-      <!-- month -->
-      <!-- <form>
-        <select name="month" id="month">
-          <option value="none">==선택==</option>
-          <option value="1월">1월</option>
-          <option value="2월">2월</option>
-          <option value="3월">3월</option>
-          <option value="4월">4월</option>
-          <option value="5월">5월</option>
-          <option value="6월">6월</option>
-          <option value="7월">7월</option>
-          <option value="8월">8월</option>
-          <option value="9월">9월</option>
-          <option value="10월">10월</option>
-          <option value="11월">11월</option>
-          <option value="12월">12월</option>
-        </select>
-      </form> -->
-
-      <!-- day -->
-      <!-- <form>
-        <select name="day" id="day">
-          <option value="none">==선택==</option>
-          <option value="1일">1일</option>
-          <option value="2일">2일</option>
-          <option value="3일">3일</option>
-          <option value="4일">4일</option>
-          <option value="5일">5일</option>
-          <option value="6일">6일</option>
-          <option value="7일">7일</option>
-          <option value="8일">8일</option>
-          <option value="9일">9일</option>
-          <option value="10일">10일</option>
-          <option value="11일">11일</option>
-          <option value="12일">12일</option>
-          <option value="13일">13일</option>
-          <option value="14일">14일</option>
-          <option value="15일">15일</option>
-          <option value="16일">16일</option>
-          <option value="17일">17일</option>
-          <option value="18일">18일</option>
-          <option value="19일">19일</option>
-          <option value="20일">20일</option>
-          <option value="21일">21일</option>
-          <option value="22일">22일</option>
-          <option value="23일">23일</option>
-          <option value="24일">24일</option>
-          <option value="25일">25일</option>
-          <option value="26일">26일</option>
-          <option value="27일">27일</option>
-          <option value="28일">28일</option>
-          <option value="29일">29일</option>
-          <option value="30일">30일</option>
-          <option value="31일">31일</option>
-        </select>
-      </form> -->
-
       <!-- hour -->
       <form>
         <select name="hour" id="hour">
@@ -181,7 +116,7 @@
       </form>
 
       <!-- second -->
-      <form>
+      <form>  
         <select name="second" id=second>
           <option value="none">==선택하세요==</option>
           <option value="0">0초</option>
@@ -246,33 +181,79 @@
           <option value="59">59초</option>
         </select>
       </form>
-
-
-
-      <!-- 알람 시간 설정 -->
-      <!-- <input type="text" class="input_alarm_hour" placeholder="시">
-      <input type="text" class="input_alarm_minite" placeholder="분">
-      <input type="text" class="input_alarm_second" placeholder="초">
- -->
-      <!-- 해야할 일 입력 -->
-      <input type="text" class="input_text">
-
-      <!-- 입력 버튼 -->
-      <input type="button" class="input_btn" value="추가">
-
-      <!-- 선택 삭제 버튼 -->
-      <input type="button" class="input_btn_select_remove" value="선택삭제">
-
-      <!-- 전체 삭제 버튼 -->
-      <input type="button" class="input_btn_remove" value="전체삭제">
-    </section>
-    <section class="output">
-      <ul class="output_ul">
-
-      </ul>
-      <!-- 보여지는 공간 -->
-    </section>
+    </div>
+    <input type="button" value='확인' id="modal_btn">
+    <input type='button' value='닫기' id="modal_close_btn">
   </div>
+
+  <div class="big_name">
+    <div>
+      TO DO LIST
+    </div>
+  </div>
+
+  <section>
+    <div class="left">
+      <div class="input">
+
+
+
+
+
+        <!-- 해야할 일 입력 -->
+        <input type="text" class="input_text">
+
+        <!-- 입력 버튼 -->
+        <input type="button" class="input_btn" value="추가">
+
+        <!-- 선택 삭제 버튼 -->
+        <input type="button" class="input_btn_select_remove" value="선택삭제">
+
+        <!-- 전체 삭제 버튼 -->
+        <input type="button" class="input_btn_remove" value="전체삭제">
+      </div>
+      <div class="output">
+        <ul class="output_ul">
+
+        </ul>
+        <!-- 보여지는 공간 -->
+      </div>
+    </div>
+    <div class="rigth">
+      <div class="calender">
+        <div class="hour0">0시</div>
+        <div class="hour1">1시</div>
+        <div class="hour2">2시</div>
+        <div class="hour3">3시</div>
+        <div class="hour4">4시</div>
+        <div class="hour5">5시</div>
+        <div class="hour6">6시</div>
+        <div class="hour7">7시</div>
+        <div class="hour8">8시</div>
+        <div class="hour9">9시</div>
+        <div class="hour10">10시</div>
+        <div class="hour11">11시</div>
+        <div class="hour12">12시</div>
+        <div class="hour13">13시</div>
+        <div class="hour14">14시</div>
+        <div class="hour15">15시</div>
+        <div class="hour16">16시</div>
+        <div class="hour17">17시</div>
+        <div class="hour18">18시</div>
+        <div class="hour19">19시</div>
+        <div class="hour20">20시</div>
+        <div class="hour21">21시</div>
+        <div class="hour22">22시</div>
+        <div class="hour23">23시</div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
 
 
 </body>
