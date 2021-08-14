@@ -11,6 +11,7 @@ let alarmTimeMinite = document.querySelector('#minite')
 let alarmTimeSecond = document.querySelector('#second')
 
 
+
 // let selectDataEl = document.createElement('input')
 
 
@@ -52,8 +53,7 @@ modalBtnEl.addEventListener('click',function () {
   } else if(arr.length >= 0 && arr.includes(inputTextEl.value) === false) {
     // 같은 내용 걸러내기
     
-    
-
+   
     
     
 
@@ -128,20 +128,31 @@ modalBtnEl.addEventListener('click',function () {
   let audio = new Audio('alarmAudio.mp3')
 
   if(!isNaN(timeSum)) {
+    let data = '.'+'hour'+alarmTimeHour.value
+    let calender = document.querySelector(data)
     if(alarmTime > 0) {
       setTimeout(function() {
+        calender.textContent = alarmTimeHour.value + '시';
+        calender.style.backgroundColor = "#FFFEE6";
         audio.play()
-      },alarmTime - 1000)
+      },alarmTime + 1000)
       setTimeout(function() {
         alert(outputDataEl.textContent)
-      },alarmTime - 1000)
+      },alarmTime + 1000)
     } else {
       setTimeout(function() {
+        
+        calender.textContent = alarmTimeHour.value + '시';
+        calender.style.backgroundColor = "#FFFEE6";
         audio.play()
         alert(outputDataEl.textContent)
       },(86400 - (currentTimeSum - timeSum)) * 1000 - 1000)
     }
-    
+    // 캘린더에 알람시간 표시하기
+  if(alarmTimeHour !== 'none') {    
+    calender.textContent = inputTextEl.value
+    calender.style.backgroundColor = "#f9f5ad";
+  }
   }
   
   console.log("hour : ", hour ,"minite : ", minite, "second : ", second, "sum : ", hour + minite + second)
@@ -157,15 +168,6 @@ modalBtnEl.addEventListener('click',function () {
   document.querySelector('.modal_wrap').style.display = 'none'
   document.querySelector('.black_bg').style.display = 'none'
 
-
-  // 캘린더에 알람시간 표시하기
-  if(alarmTimeHour !== 'none') {
-    let data = '.'+'hour'+alarmTimeHour.value
-    let calender = document.querySelector(data)
-    calender.textContent = inputTextEl.value
-    calender.style.backgroundColor = "#f9f5ad";
-  }
-  
   } else {
     alert("동일한 내용이 있습니다.")
   }
